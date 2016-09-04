@@ -4,6 +4,7 @@
 
 const webpack = require('webpack');
 const helpers = require('./helpers');
+var path = require('path');
 
 /*
  * Webpack Plugins
@@ -159,8 +160,8 @@ module.exports = {
                 loaders: ['to-string-loader', 'css-loader']
             },
             {
-                include: helpers.root('src', 'styles'),
-                test: /\.scss$/, loader: 'raw!sass'
+                test: /\.scss$/,
+                loader: "style!css!sass?includePaths[]=" + path.resolve(__dirname, "./node_modules/compass-mixins/lib")
             },
             // {
             //     test: /\.scss$/,
@@ -196,6 +197,8 @@ module.exports = {
         ]
 
     },
+
+    sassResources: path.resolve(__dirname, "./src/assets/styles/styles.scss"),
 
     /*
      * Add additional plugins to the compiler.

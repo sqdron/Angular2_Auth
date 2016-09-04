@@ -1,15 +1,8 @@
 {
-  "name": "angular2-webpack-starter",
-  "version": "5.0.5",
-  "description": "An Angular 2 Webpack Starter kit featuring Angular 2 (Router, Http, Forms, Services, Tests, E2E, Coverage), Karma, Protractor, Jasmine, Istanbul, TypeScript, and Webpack by AngularClass",
-  "keywords": [
-    "angular2",
-    "webpack",
-    "typescript"
-  ],
-  "author": "Patrick Stapleton <patrick@angularclass.com>",
-  "homepage": "https://github.com/angularclass/angular2-webpack-starter",
-  "license": "MIT",
+  "name": "angular2_auth",
+  "version": "1.0.0",
+  "homepage": "https://github.com/sqdron/angular2_auth",
+  "license": "Apache License Version 2.0, January 2004",
   "scripts": {
     "rimraf": "rimraf",
     "tslint": "tslint",
@@ -123,6 +116,7 @@
     "rimraf": "^2.5.2",
     "sass": "^0.5.0",
     "sass-loader": "^4.0.1",
+    "sass-resources-loader": "^1.1.0",
     "source-map-loader": "^0.1.5",
     "string-replace-loader": "^1.0.3",
     "style-loader": "^0.13.1",
@@ -142,10 +136,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/angularclass/angular2-webpack-starter.git"
+    "url": "https://github.com/sqdron/angular2_auth.git"
   },
   "bugs": {
-    "url": "https://github.com/angularclass/angular2-webpack-starter/issues"
+    "url": "https://github.com/sqdron/angular2_auth/issues"
   },
   "engines": {
     "node": ">= 4.2.1",
