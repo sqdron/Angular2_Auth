@@ -10,7 +10,15 @@ import {LoginSignInComponent} from "./login/signin/login-signin.component";
 import {LoginForgotComponent} from "./login/forgot/login-forgot.component";
 import {LoginRegistrationComponent} from "./login/registration/login-registration.component";
 import {NoContentComponent} from "./no-content/no-content.component";
+import {UserApi} from "./shared/api/users.api";
+import {LOCAL_STORAGE_SERVICE_CONFIG} from "angular-2-local-storage/src/LocalStorageServiceConfig";
+import {LocalStorageService} from "angular-2-local-storage/src/LocalStorageService";
+import {CustomHttp} from "./shared/services/http.service";
 
+let localStorageServiceConfig = {
+    prefix: 'angular2auth',
+    storageType: 'localStorage'
+};
 
 @NgModule({
     bootstrap: [AppComponent],
@@ -21,6 +29,8 @@ import {NoContentComponent} from "./no-content/no-content.component";
         LoginRegistrationComponent,
         NoContentComponent
     ],
+    providers: [UserApi, {provide: LOCAL_STORAGE_SERVICE_CONFIG, useValue: localStorageServiceConfig},
+        LocalStorageService, CustomHttp],
     imports: [
         BrowserModule,
         FormsModule,
@@ -28,4 +38,5 @@ import {NoContentComponent} from "./no-content/no-content.component";
         RouterModule.forRoot(ROUTES, {useHash: true})
     ]
 })
-export class AppModule {}
+export class AppModule {
+}

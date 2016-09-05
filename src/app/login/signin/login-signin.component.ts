@@ -1,14 +1,20 @@
 import {Component} from "@angular/core";
-import {User} from "../../shared/models/user";
+import {UserApi} from "../../shared/api/users.api";
+import {UserLogin} from "../../shared/models/login";
 @Component({
-  selector: 'login',
-  templateUrl: './login-signin.component.html'
+    selector: 'login',
+    templateUrl: './login-signin.component.html'
 })
 
-export class LoginSignInComponent{
-  user: User = new User();
+export class LoginSignInComponent {
+    constructor(private userApi: UserApi) {
+    }
 
-  signin() {
+    user: UserLogin = new UserLogin();
 
-  }
+    signin() {
+        this.userApi.login(this.user).subscribe(()=>{});
+        this.userApi.getAccessToken().subscribe(()=>{});
+
+    }
 }
